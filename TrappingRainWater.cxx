@@ -59,5 +59,8 @@ int main() {
     vector<int> arr{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
     TrappingRainWater Solver;
     cout << " Rainwater Trapped: " <<  Solver.Solve(arr) << endl;
+
+    vector<int> arr2{3, 0, 2, 0, 4};
+    cout << " Rainwater Trapped: " <<  Solver.Solve(arr2) << endl;
     return 0;
 }
