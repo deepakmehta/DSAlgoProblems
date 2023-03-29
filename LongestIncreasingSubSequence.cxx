@@ -4,12 +4,20 @@
 
 #include<vector>
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 int LongestSubsequence(vector<int> nums)
 {
-    // your code will replace this placeholder return statement
-    return -1;
+    if(nums.empty()) return -1;
+    vector<int>dp(nums.size(),1);
+    dp[0]=1;
+    for(int i=1;i<nums.size();++i) {
+        for(int j=0; j<i;++j) {
+            dp[i]=max(dp[i],nums[i]>nums[j]?dp[j]+1:0);
+        }
+    }
+    return *max_element(dp.begin(), dp.end());
 }
 
 int main(int argc, char const *argv[])
