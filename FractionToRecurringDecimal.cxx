@@ -16,6 +16,10 @@ string FractionToDecimal(int numerator, int denominator)
 {
     string ans("");
     string final_ans("");
+    if((numerator<0&&denominator>0) ||(numerator>0&&denominator<0))
+        {
+        ans.append("-");
+        }
     long int d= abs(denominator);
         long int n=abs(numerator);
         
